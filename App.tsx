@@ -5,12 +5,13 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
+import React, { useState } from 'react';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
-  useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import DemoNavigator from './src/navigation/DemoNavigator';
+import DemoViewer from './src/components/DemoViewer';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,14 +25,23 @@ function App() {
 }
 
 function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+  const [currentDemo, setCurrentDemo] = useState<string | null>(null);
+
+  const handleNavigate = (demoName: string) => {
+    setCurrentDemo(demoName);
+  };
+
+  const handleBack = () => {
+    setCurrentDemo(null);
+  };
 
   return (
     <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+      {currentDemo ? (
+        <DemoViewer demoName={currentDemo} onBack={handleBack} />
+      ) : (
+        <DemoNavigator onNavigate={handleNavigate} />
+      )}
     </View>
   );
 }

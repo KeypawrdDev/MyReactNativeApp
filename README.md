@@ -1,97 +1,207 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Interview Prep - 4 Day Plan
 
-# Getting Started
+## Overview
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Intensive 4-day study plan with practical implementations for each major concept. Each day focuses on a core topic area with hands-on demos built into the MyReactNativeApp project.
 
-## Step 1: Start Metro
+## Day 1: React & JavaScript Core (6-8 hours)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Morning: Component Patterns & Hooks
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+**Study Topics:**
 
-```sh
-# Using npm
-npm start
+- JSX and rendering logic
+- Function components with hooks (useEffect, useMemo, useCallback)
+- Component lifecycle patterns
+- Props vs state
 
-# OR using Yarn
-yarn start
-```
+**Hands-on Implementation:**
+Create `src/demos/Day1/` folder with:
 
-## Step 2: Build and run your app
+- `HooksDemo.tsx` - Demonstrate useEffect, useMemo, useCallback with real examples
+- `LifecycleDemo.tsx` - Show component mounting/unmounting, cleanup
+- `PropsVsStateDemo.tsx` - Interactive comparison
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+**Resources:**
 
-### Android
+- React.dev - Hooks documentation
+- Review React lifecycle diagrams
 
-```sh
-# Using npm
-npm run android
+### Afternoon: State Management & Async
 
-# OR using Yarn
-yarn android
-```
+**Study Topics:**
 
-### iOS
+- useState patterns and best practices
+- Context API implementation
+- Redux/Zustand basics
+- Async/await, Promises
+- ES6+ syntax (spread/rest, destructuring, arrow functions)
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+**Hands-on Implementation:**
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- `StateManagementDemo.tsx` - Context API with complex state
+- `AsyncDemo.tsx` - Fetch data, loading states, error handling
+- `ES6SyntaxDemo.tsx` - Practical examples of modern JS
 
-```sh
-bundle install
-```
+**Resources:**
 
-Then, and every time you update your native dependencies, run:
+- JavaScript.info - Promises/Async section
+- FrontendMasters React interview questions
 
-```sh
-bundle exec pod install
-```
+---
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## Day 2: React Native Specifics (6-8 hours)
 
-```sh
-# Using npm
-npm run ios
+### Morning: Core Architecture & Navigation
 
-# OR using Yarn
-yarn ios
-```
+**Study Topics:**
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- React Native bridge and rendering
+- React Navigation (Stack, Tab, Drawer)
+- Platform-specific code (Platform.OS)
+- Styling with StyleSheet and Flexbox
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+**Hands-on Implementation:**
+Create navigation structure:
 
-## Step 3: Modify your app
+- Install React Navigation packages
+- `src/navigation/` - Setup Stack, Tab, Drawer navigators
+- `src/demos/Day2/PlatformDemo.tsx` - Platform.OS conditionals
+- `src/demos/Day2/StyleDemo.tsx` - Flexbox layouts, responsive design
 
-Now that you have successfully run the app, let's make changes!
+**Resources:**
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- React Native Docs - Core Components
+- React Navigation documentation
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+### Afternoon: Performance & Optimization
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+**Study Topics:**
 
-## Congratulations! :tada:
+- FlatList vs ScrollView
+- Memoization (React.memo, useMemo, useCallback)
+- Re-render optimization
+- Native modules overview
 
-You've successfully run and modified your React Native App. :partying_face:
+**Hands-on Implementation:**
 
-### Now what?
+- `PerformanceDemo.tsx` - FlatList with optimizations (keyExtractor, getItemLayout)
+- `MemoizationDemo.tsx` - Before/after performance comparison
+- Add React DevTools profiler usage
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+**Resources:**
 
-# Troubleshooting
+- Callstack: "Performance Optimization in React Native"
+- React Native Performance docs
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+---
 
-# Learn More
+## Day 3: Mobile Development Concepts (6-8 hours)
 
-To learn more about React Native, take a look at the following resources:
+### Morning: Storage, Security & Deep Linking
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Study Topics:**
+
+- AsyncStorage vs SecureStore
+- Deep linking configuration
+- Navigation with params
+- App architecture patterns
+
+**Hands-on Implementation:**
+
+- Install `@react-native-async-storage/async-storage`
+- `src/demos/Day3/StorageDemo.tsx` - CRUD operations with AsyncStorage
+- `src/demos/Day3/DeepLinkingDemo.tsx` - Handle deep links
+- Configure deep linking in `android/app/src/main/AndroidManifest.xml` and `ios/` info.plist
+
+**Resources:**
+
+- React Navigation - Deep Linking guide
+- AsyncStorage documentation
+
+### Afternoon: Push Notifications & Updates
+
+**Study Topics:**
+
+- Push notifications (Firebase Cloud Messaging basics)
+- OTA updates (CodePush/Expo Updates concepts)
+- Versioning strategies
+- App store deployment overview
+
+**Hands-on Implementation:**
+
+- `src/demos/Day3/NotificationsDemo.tsx` - Local notifications setup
+- Document deployment checklist in `DEPLOYMENT.md`
+- Review app.json and build configurations
+
+**Resources:**
+
+- Firebase Cloud Messaging docs
+- "The React Native Lifecycle of an App" (Medium)
+- Expo Updates or CodePush guides
+
+---
+
+## Day 4: Testing & CI/CD (6-8 hours)
+
+### Morning: Unit & Snapshot Testing
+
+**Study Topics:**
+
+- Jest configuration
+- Component testing best practices
+- Snapshot testing
+- Mocking patterns
+
+**Hands-on Implementation:**
+
+- Update `jest.config.js` if needed
+- `__tests__/demos/HooksDemo.test.tsx` - Test hooks behavior
+- `__tests__/demos/AsyncDemo.test.tsx` - Test async operations with mocks
+- Create snapshot tests for key components
+
+**Resources:**
+
+- Jest documentation
+- React Native Testing Library
+
+### Afternoon: E2E Testing & CI/CD
+
+**Study Topics:**
+
+- Detox setup and configuration
+- E2E test patterns
+- CI/CD pipelines (GitHub Actions, Fastlane overview)
+- QA tools (TestFlight, Firebase App Distribution)
+
+**Hands-on Implementation:**
+
+- Create basic Detox configuration file
+- Write 1-2 simple E2E tests
+- `docs/CI_CD_NOTES.md` - Document CI/CD pipeline concepts
+- Create `.github/workflows/react-native-ci.yml` template
+
+**Resources:**
+
+- Detox documentation
+- "End-to-End App Store Deployment with React Native" YouTube
+- GitHub Actions for React Native
+
+---
+
+## Interview Prep Checklist
+
+Create `INTERVIEW_PREP.md` with:
+
+- Common React Native interview questions & answers
+- Code snippets for quick reference
+- Performance optimization checklist
+- Debugging strategies
+- Architecture decision explanations
+
+## Final Review
+
+- Review all demo components
+- Practice explaining each concept
+- Test the app end-to-end
+- Prepare to discuss trade-offs and decisions
